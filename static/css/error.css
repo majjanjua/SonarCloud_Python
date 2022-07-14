@@ -1,0 +1,17 @@
+.error-header{
+	text-align: center;
+	font-size: xx-large;
+	background-color: black;
+	color: slategray;
+}
+.error_btn{
+	
+		position: fixed;
+		left: 0;
+		
+		width: 100%;
+		background-color: #333;
+		color: white;
+		text-align: center;
+		height: 5vh;
+	  }

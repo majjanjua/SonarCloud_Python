@@ -1,0 +1,84 @@
+{% extends "template.html" %}
+
+{% block body %}
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../../static/images/languages_header/java.jpg" alt="Los Angeles" width="100%" height="500">
+        </div>
+    </div>
+</div>
+<hr>
+<div style="display: flex;flex-wrap: wrap;flex-direction: row;">
+    <div style="flex:60%">
+        <h1>JAVA</h1>
+        <h2>Officia Website: <a href="https://www.java.com/" target="_blank">java.org</a></h2>
+        <p>Java is a class-based, object-oriented programming language that is designed to have as few implementation
+            dependencies as possible. It is a general-purpose programming language intended to let application
+            developers <cite title="WORA"><b>write once, run anywhere (WORA)</b></cite>.</p>
+        <p>
+            Java was originally developed by <a href="https://en.wikipedia.org/wiki/James_Gosling">James Gosling</a> at
+            Sun Microsystems (which has since been acquired by Oracle)
+            and released in 1995 as a core component of Sun Microsystems' Java platform. The original and reference
+            implementation Java compilers, virtual machines, and class libraries were originally released by Sun under
+            proprietary licenses. As of May 2007, in compliance with the specifications of the Java Community Process,
+            Sun had relicensed most of its Java technologies under the GNU General Public License. Oracle offers its own
+            HotSpot Java Virtual Machine, however the official reference implementation is the OpenJDK JVM which is free
+            open source software and used by most developers including the Eclipse IDE and is the default JVM for almost
+            all Linux distributions.
+        </p>
+        <p>The latest versions are Java 14, released in March 2020, and Java 11, a currently supported long-term support
+            (LTS) version, released on September 25, 2018; Oracle <span id="dots">...</span><span id="more">creleased
+                for the legacy Java 8 LTS the last free
+                public update in January 2019 for commercial use, while it will otherwise still support Java 8 with
+                public
+                updates for personal use up to at least December 2020. Oracle (and others) highly recommend uninstalling
+                older versions of Java because of serious risks due to unresolved security issues. Since Java 9, 10, 12
+                and 13 are no longer supported, Oracle advises its users to immediately transition to the latest version
+                (currently Java 14) or an LTS release.</span></p>
+        <label onclick="myFunction()" id="myBtn" style="color: blue;">Read more</label>
+    </div>
+    <div style="flex: 30%;flex-direction: column;margin-left: 10%;">
+        <div>
+            <h2>Useful Java Links:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3schools.com/java/java_intro.asp"
+                        target="_blank">w3schools</a>
+                </li>
+                <li>
+                    <a
+                        href="https://www.tutorialspoint.com/java/index.html" target="_blank">Java
+                        for Begineers</a>
+                </li>
+                <li>
+                    <a href="https://www.codecademy.com/learn/learn-java"
+                        target="_blank">Codecademy</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2>Online Java Compilers and Playgrounds:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.tutorialspoint.com/compile_java_online.php" target="_blank">Tutorials Point
+                        Compiler</a>
+                </li>
+                <li>
+                    <a href="https://www.javatpoint.com/opr/online-java-compiler.jsp" target="_blank">Others</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2>Java Coding examples:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.javatpoint.com/java-programs" target="_blank">Javatpoint</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

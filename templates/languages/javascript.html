@@ -1,0 +1,89 @@
+{% extends "template.html" %}
+
+{% block body %}
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../../static/images/languages_header/javascript.png" alt="Los Angeles" width="100%" height="500">
+        </div>
+    </div>
+</div>
+<hr>
+<div style="display: flex;flex-wrap: wrap;flex-direction: row;">
+    <div style="flex:60%">
+        <h1>JavaScript</h1>
+        <p>JavaScript often abbreviated as JS, is a programming language that conforms to the
+            ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It
+            has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class
+            functions.</cite>.</p>
+        <p>
+            Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web. JavaScript
+            enables interactive web pages and is an essential part of web applications. The vast majority of websites
+            use it for client-side page behavior, and all major web browsers have a dedicated JavaScript engine to
+            execute it.
+
+            As a multi-paradigm language, JavaScript supports event-driven, functional, and imperative programming
+            styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions,
+            standard data structures, and the Document Object Model (DOM). However, the language itself does not include
+            any input/output (I/O), such as networking, storage, or graphics facilities, as the host environment
+            (usually a web browser) provides those APIs.
+        </p>
+        <h4>The rise of JScript</h4>
+        <p>
+            In November 1996, Netscape submitted JavaScript to ECMA International, as the starting point for a standard
+            specification that all browser vendors could conform to. This led to the official release of the first
+            ECMAScript language specification in June 1997.
+
+            The standards process <span
+                id="dots">...</span><span id="more">continued for a few years, with the release of ECMAScript 2 in June 1998 and
+                    ECMAScript 3 in December 1999. Work on ECMAScript 4 began in 2000.
+        
+                    Meanwhile, Microsoft gained an increasingly dominant position in the browser market. By the early 2000s,
+                    Internet Explorer's market share reached 95%.[18] This meant that JScript became the de facto standard for
+                    client-side scripting on the Web.
+        
+                    Microsoft initially participated in the standards process and implemented some proposals in its JScript
+                    language, but eventually it stopped collaborating on ECMA work. Thus ECMAScript 4 was mothballed. </span></p>
+        <label onclick="myFunction()" id="myBtn" style="color: blue;">Read more</label>
+    </div>
+    <div style="flex: 30%;flex-direction: column;margin-left: 10%;">
+        <div>
+            <h2>Useful JavaScript Links:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3schools.com/js/DEFAULT.asp" target="_blank">w3schools</a>
+                </li>
+                <li>
+                    <a href="https://www.javascript.com/" target="_blank">JavaScript
+                        for Begineers</a>
+                </li>
+                <li>
+                    <a href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">Codecademy</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2>Online JavaScript Compilers and Playgrounds:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.tutorialspoint.com/online_javascript_editor.php" target="_blank">Tutorials Point
+                        Compiler</a>
+                </li>
+                <li>
+                    <a href="https://js.do/" target="_blank">Others</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2>JavaScript Coding examples:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3schools.com/js/js_examples.asp" target="_blank">W3Schools</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

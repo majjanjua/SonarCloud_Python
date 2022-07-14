@@ -1,0 +1,82 @@
+{% extends "template.html" %}
+
+{% block body %}
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../../static/images/languages_header/bash.jpg" alt="Los Angeles" width="100%" height="500">
+        </div>
+    </div>
+</div>
+<hr>
+<div style="display: flex;flex-wrap: wrap;flex-direction: row;">
+    <div style="flex:60%">
+        <h1>Bash Shell Scripting</h1>
+        <p>Bash is a command language interpreter. It is widely available on various operating systems and is a default
+            command interpreter on most GNU/Linux systems. The name is an acronym for the ‘Bourne-Again SHell’. Shell is
+            a macro processor which allows for an interactive or non-interactive command execution.Scripting allows for
+            an automatic commands execution that would otherwise be executed interactively one-by-one.</p>
+        <p>
+            Bash (or shell) scripting is a great way to automate repetitive tasks and can save you a ton of time as a
+            developer. Bash scripts execute within a Bash shell interpreter terminal.
+        </p>
+        <p>Bash is a command processor that typically runs in a text window where the user types commands that cause
+            actions. Bash can also read and execute<span id="dots">...</span><span id="more">commands from a file,
+                called a shell script. Like all Unix shells, it
+                supports filename globbing (wildcard matching), piping, here documents, command substitution, variables,
+                and
+                control structures for condition-testing and iteration. The keywords, syntax, dynamically scoped
+                variables and
+                other basic features of the language are all copied from sh. Other features, e.g., history, are copied
+                from csh
+                and ksh. Bash is a POSIX-compliant shell, but with a number of extensions.</span></p>
+
+
+        The shell's name is an acronym for Bourne Again Shell, a pun on the name of the Bourne shell that it
+        replaces and the notion of being "born again".
+        <label onclick="myFunction()" id="myBtn" style="color: blue;">Read more</label>
+    </div>
+    <div style="flex: 30%;flex-direction: column;margin-left: 10%;">
+        <div>
+            <h2>Useful Bash Links:</h2>
+            <ul>
+                <li>
+                    <a
+                        href="https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting" target="_blank">Codecademy</a>
+                </li>
+                <li>
+                    <a
+                        href="https://linuxconfig.org/bash-scripting-tutorial-for-beginners#:~:text=Bash%20is%20a%20command%20language,'Bourne%2DAgain%20SHell'.&text=Shell%20is%20a%20macro%20processor,or%20non%2Dinteractive%20command%20execution.">Bash
+                        Scripting for Begineers</a>
+                </li>
+                <li>
+                    <a
+                        href="https://medium.com/sysf/bash-scripting-everything-you-need-to-know-about-bash-shell-programming-cd08595f2fba" target="_blank">Bash-Nutsell</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2>Online Bash Compilers and Playgrounds:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.tutorialspoint.com/execute_bash_online.php" target="_blank" >Tutorials Point Compiler</a>
+                </li>
+                <li>
+                    <a href="https://paiza.io/projects/A4r7SZXncN2aIbXD1TF_xA?language=bash" target="_blank">Others</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2>Bash Scripting examples:</h2>
+            <ul>
+                <li>
+                    <a href="https://linuxhint.com/30_bash_script_examples/">Linuxhint</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

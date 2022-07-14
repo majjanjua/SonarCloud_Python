@@ -1,0 +1,82 @@
+{% extends 'template.html' %}
+
+{% block body %}
+    {% if update %}
+    <!-- For accepting the secretKey -->
+    <form action="{{ url_for('updaterequest')}}" method="POST">
+        <b>Enter your secretKey : </b>        
+        <input class="form-control" name="secretKey" type="text" required placeholder="Secret Key">
+        <button class="btn btn-info"> Search </button>
+    </form>        
+    {% else %}
+        {% if queryStatus %}
+        <!-- Details of the secrey key entered. -->
+        <div style="justify-content: center;font-size: x-large;"> 
+          Query Details: 
+        </div>  
+        <hr >
+        <form action="{{ url_for('addrequest')}}" method="POST">
+            <div class="form-group">
+              <label for="addrequest" style="margin: 5px;"><strong>Name</strong></label>
+              <input style="margin: 5px;" required type="text" class="form-control" name="name" value="{{queryDetails['name']}}">
+            </div>
+            <div class="form-group">
+              <label style="margin: 5px;" for="addrequest"><strong>Email address</strong></label>
+              <input style="margin: 5px;" required type="text" class="form-control" name="email" value="{{queryDetails['email']}}">
+            </div>
+            <div class="form-group row ">
+                <div class="col-sm-12 ">
+                    <label style="margin: 5px;" for="addrequest"><strong>Problem Statement</strong></label>
+                    <textarea  type="text" class="form-control" maxlength="500" name="problem" required
+                    placeholder="{{queryDetails['problem']}}" style="height: 300px;"></textarea>
+                </div>
+            </div>
+            <!-- FOR DEADLINE DATE. -->        
+            <div class="form-group">
+              <label for="datepicker" style="margin: 5px;" ><strong>Deadline</strong></label>
+              <div class="form-group-prepend">
+                <span class="input-group-text fa fa-calendar" id=""></span>
+              </div>            
+                <!-- <input style="margin: 5px;" required type="text" class="form-control" name="deadline" placeholder="Date Month Year"> -->
+                <!-- <div class="col-md-4 col-sm-4 col-xs-12"> -->
+                <input type="text" name='deadline' class="form-control" id="datepicker" value="{{queryDetails['deadline']}}" required placeholder="MM/DD/YYYY" >
+            </div>  
+          
+            <div class="form-group">
+              <label style="margin: 5px;" for="addrequest" ><strong>Language Choice</strong> <h6 style="color: red;">In case of Others, please specify the language in the Problem Statement Text Box.</h6></label>
+              <select style="margin: 5px;" required class="form-control" name="language">
+                {% for lang in laguages_list %}
+                      <option>{{ lang }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="form-group">
+              <label style="margin: 5px;" for="addrequest"><strong>Secret Key</strong><h6 style="color: red;">Please specify your secret key, during the time of updating the query.</h6></label>
+              <input required style="margin: 5px;" type="password" class="form-control" name="secretkey" value="{{queryDetails['secretkey']}}">
+          </div>
+            <div class="form-group row" style="padding-bottom: 5vh;">
+                <div class="col-sm-12">
+                    <button style="margin: 5px;" class="btn-md btn-primary form-control" name='buttonrequest' value='update' type="submit">Update form</button>
+                </div>
+            </div>
+          </form>
+          {% else %}
+            <div style="color: red;">
+                No such query with the secretKey: <b>{{ secretKey }}</b>.
+                
+            </div>
+            <br>
+            <form action="{{ url_for('updaterequest')}}" method="GET">
+              <button class="btn btn-info ">Search another ?</button>
+            </form>
+          {% endif %}
+    {% endif %}
+    <script>
+      $(document).ready(function() {
+      $("#datepicker").datepicker();
+      $('.fa-calendar').click(function() {
+          $("#datepicker").focus();
+      });
+      });
+    </script>
+{% endblock %}

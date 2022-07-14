@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="google-site-verification" content="CyP_KdqlU1_TID2HNHEEgpp2M0fzOGkYzOjx-Z21xCg" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Register</title>
+</head>
+
+<body id="content">
+    <div style="color: black;margin: 10px;">
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr style="background-color: white;">
+    </div>
+    <form action="{{ url_for('register')}}" method="POST" style="margin: 10px;"> 
+        
+            <div>
+                <div class="form-group row">
+                    <div class="col-sm-12 ">
+                        <label><b>Username</b></label>
+                        <input class="form-control" type="text" placeholder="Enter Username" name="username" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  >Email address</label>
+                    <input type="text" name="username" class="form-control" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <div class="form-group row ">
+                    <div class="col-sm-12 ">
+                        <label><b>Repeat Password</b></label>
+                        <input class="form-control" type="password" placeholder="Repeat Password" name="password-repeat"
+                            required>
+                    </div>
+                </div>
+                {% if message_status %}
+                <label style="color: green;">{{ message }}</label>
+                <div class="clearfix" style="margin-top: 10px;">
+                    <label>
+                        <a href="{{ url_for('login')}}">Try logging in now.</a>
+                    </label>
+                </div>
+                {% endif %}
+                {% if error_message_status %}
+                <label style="color: red;">{{ message }}</label>
+                {% endif %}
+                <div class="form-group row ">
+                    <div class="col-sm-12">
+                        <button class="btn-md btn-primary form-control" type="submit">Submit form</button>
+                    </div>
+                </div>
+            </div>
+        
+    
+</form>
+    <!--This is for the footer-->
+    <!--Footer-->
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+          <img src="../static/images/backgroundImage/new_logo.png">
+    
+          <p class="footer-links">
+            <a href="{{ url_for('homepage')}}">Home</a>
+            |
+            <a href="{{ url_for('blog')}}">Blog</a>
+            |
+            <a href="{{ url_for('about')}}">About</a>
+            |
+            <a href="{{ url_for('contact')}}">Contact</a>
+          </p>
+        </div>
+    
+        <div class="footer-center">
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>+91 7060247236</p>
+          </div>
+          <div>
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:ranjan.himanshu9@gmail.com">ranjan.himanshu9@gmail.com</a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <p class="footer-company-about">
+          
+          <span>You can also contact us on social websites.</span>
+          We offer training and help you along with differnt coding questions in a language prefered by you.</p>
+    
+          <div class="footer-icons">
+            <a href="https://www.facebook.com/profile.php?id=100050402701708"><i class="fa fa-facebook"
+                aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/himanshuranjan95"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/hemanranjan/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </footer>
+    
+</body>
+
+</html>

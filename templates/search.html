@@ -1,0 +1,40 @@
+{% extends 'template.html' %}
+
+{% block body %}
+    
+    {% if result_status %}
+    <div>
+        Search Results for <b>{{ search_text }}</b>
+        <hr style="background-color: white;">
+    </div> 
+        {% for i in search_results %}
+        <!-- <a href="https://www.google.com" style="color: black;">
+            <div style="font-size: xx-large;overflow-wrap: anywhere;max-width: 50%;" class="text-truncate">
+                {{i[3]}}
+            </div>
+            <div>
+                Updated by: {{ i[1] }}
+            </div>
+        </a> -->
+        <form action="{{ url_for('problemquery', id=i['id'])}}" method="POST">
+            <a href="{{ url_for('problemquery', id=i['id'])}}" style="color: black;" target="#">
+                <div style="font-size: x-large;overflow-wrap: anywhere;max-width: 50%;" class="text-truncate" title="{{i['problem']}}">
+                    {{i['problem']}}
+                </div>
+            </a>
+            
+            <div>
+                Updated by: {{ i['name'] }}
+            </div>
+
+        </form>
+        {% endfor  %}
+        
+    {% else %}
+    <div>
+        No results found for {{ search_text }}
+    </div>
+
+    {% endif %}
+
+{% endblock %}

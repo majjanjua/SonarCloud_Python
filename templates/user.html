@@ -1,0 +1,76 @@
+{% extends 'template.html' %}
+
+{% block body %}
+<style>
+    .main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .box {
+            position: relative;
+            width: 100%;
+            max-width: 250px;
+         }
+         .box img {
+            width: 100%;
+            height: auto;
+         }
+         .box .btn {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+         }
+    
+</style>
+
+<div class="main">
+    <div style="width: 25rem;justify-content: center;">
+        <div class="box" >
+            <img  src="../static/images/profile-pictures/{{ profile_images }}" alt="Card image cap"> 
+            <form action="{{ url_for('userdetails')}}" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                    <br>
+                <button class="btn form-control" style="margin-left: 10px ;">
+                    <p><input type="submit" value="Update Profile Pic" name="button_value"></p>
+                </button>
+            </form>
+            
+        </div>        
+        <div class="card-body">
+            <p>BIO: </p>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <!-- <form action="{{ url_for('userdetails')}}" method="POST">
+            <button class="btn btn-primary btn-sm" value="update_bio" name="button_value"> Update Bio.</button>
+          </form> -->
+        </div>
+    </div>
+    <div style="width: 75rem; margin-left: 5%;">    
+        <form action="{{ url_for('userdetails')}}" method="POST">
+            <!-- FOR NAME -->
+            <div class="form-group">
+              <label for="addrequest" style="margin: 5px;"><strong>Name</strong></label>
+              <input style="margin: 5px;" required type="text" class="form-control" name="name" value="{{user.capitalize()}}">
+            </div>
+            <!-- FOR EMAIL -->
+            <div class="form-group">
+              <label style="margin: 5px;" for="addrequest"><strong>Email address</strong></label>
+              <input style="margin: 5px;" required type="email" class="form-control" name="email" placeholder="name@example.com">
+            </div>
+            <!-- FOR NAME -->
+            <div class="form-group">
+                <label for="addrequest" style="margin: 5px;"><strong>Tell something about yourself.</strong></label>
+                <input style="margin: 5px;" required type="text" class="form-control" name="bio" placeholder="Say something.">
+              </div>
+
+            <div class="form-group row" style="padding-bottom: 5vh;">
+                <div class="col-sm-12">
+                    <button style="margin: 5px;" class="btn-md btn-info form-control" name='button_value' value="update_user" type="submit">Submit form</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

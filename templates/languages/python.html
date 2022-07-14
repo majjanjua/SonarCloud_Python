@@ -1,0 +1,80 @@
+{% extends "template.html" %}
+
+{% block body %}
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../../static/images/languages_header/python.jpeg" alt="Los Angeles" width="100%" height="500">
+        </div>
+    </div>
+</div>
+<hr>
+<div style="display: flex;flex-wrap: wrap;flex-direction: row;">
+    <div style="flex:60%">
+        <h1>Python</h1>
+        <h2>Official Website: <a href="https://www.python.org/">python.org</a></h2>
+        <p>Python is an interpreted, high-level and general-purpose programming language. Created by Guido van Rossum
+            and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of
+            significant whitespace. Its language constructs and object-oriented approach aim to help programmers write
+            clear, logical code for small and large-scale projects</p>
+        <p>
+            Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including
+            structured (particularly, procedural), object-oriented, and functional programming. Python is often
+            described as a "batteries included" language due to its comprehensive standard library
+        </p>
+        <p>Python is a multi-paradigm programming language. Object-oriented programming and structured programming are
+            fully supported, and many of its features support<span id="dots">...</span><span id="more">functional
+                programming and aspect-oriented programming (including by metaprogramming and metaobjects (magic
+                methods)). Many other paradigms are supported via extensions, including design by contract
+                and logic programming.
+
+                Python uses dynamic typing and a combination of reference counting and a cycle-detecting garbage
+                collector for memory management.It also features dynamic name resolution (late binding), which
+                binds method and variable names during program execution.
+
+                Python's design offers some support for functional programming in the Lisp tradition. It has filter,
+                map, and reduce functions; list comprehensions, dictionaries, sets, and generator expressions. The
+                standard library has two modules (itertools and functools) that implement functional tools borrowed from
+                Haskell and Standard ML.</span></p>
+        <label onclick="myFunction()" id="myBtn" style="color: blue;">Read more</label>
+    </div>
+    <div style="flex: 30%;flex-direction: column;margin-left: 10%;">
+        <div>
+            <h2>Useful Python Links:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3schools.com/python/" target="_blank">W3Schools</a>
+                </li>
+                <li>
+                    <a href="https://www.codecademy.com/learn/learn-python">Codecademy</a>
+                </li>
+                <li>
+                    <a href="https://www.learnpython.org/" target="_blank">Python-Nutsell</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2>Online Bash Compilers and Playgrounds:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.tutorialspoint.com/execute_python_online.php" target="_blank">Tutorials Point
+                        Compiler</a>
+                </li>
+                <li>
+                    <a href="https://www.educba.com/python-compilers/" target="_blank">Others</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2>Bash Scripting examples:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.programiz.com/python-programming/examples">Programwiz</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

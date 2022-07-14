@@ -1,0 +1,94 @@
+{% extends "template.html" %}
+
+{% block body %}
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <style>
+        .icons {
+            width: 50px;
+        }
+    </style>
+</head>
+<div>
+    <h1 class="bd-title">About</h1>
+    <p class="bd-lead">We at <b style="color: blue;">CodingForYouu</b>, are driven to provide help, assistence and
+        guidence to our fellow coders.
+        Our clients are primarily :
+    <ul>
+        <li>College students who need a helping hand or a guide to help them code or who want to learn different coding
+            languages and methods.</li>
+        <li> Entry Level/ Freshers who have reacently joined a company and are struggling to get their task done, due to
+            lack of guidence or mentorship. </li>
+        <li> Anyone who is interesed to learn and explore the wonderful world of Coding.</li>
+    </ul>
+    </p>
+    <h1 id="team">Team</h1>
+
+    <p><b style="color: blue;">CodingForYouu</b> is maintained by a small team of developers. We’re actively looking
+        to grow this team and would love to hear from you if you’re excited about coding in different languages at
+        scale, writing, maintaining and improving build tooling processes for code.</p>
+    <div style="display: flex;flex-direction: row;flex-wrap: wrap;">
+        <div class="card" style="width: 25rem;margin: 10px;">
+            <img class="card-img-top" src="../static/images/team/sandy.JPG" alt="Sandipan Dawn"
+                style="height: 60%;max-width: 25rem;">
+            <div class="card-body">
+                <h5 class="card-title">Sandipan Dawn</h5>
+                <p class="card-text">Full Stack Python/Django Development.</p>
+                <a href="https://www.linkedin.com/mwlite/in/sandipan-dawn" target="_blank"><i
+                        class="fa fa-linkedin icons" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/sandipan000/" target="_blank"><i class="fa fa-instagram"
+                        aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 25rem;margin: 10px;">
+            <img class="card-img-top" src="../static/images/team/praveen.JPG" alt="Praveen Kumar"
+                style="height: 60%;max-width: 25rem;">
+            <div class="card-body">
+                <h5 class="card-title">Praveen Kumar</h5>
+                <p class="card-text">Frontend Developer | Angular | Javascript | Html | Css</p>
+                <a href="https://www.linkedin.com/in/praveenkumar921/" target="_blank"><i class="fa fa-linkedin icons"
+                        aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/praveensharma1708/" target="_blank"><i class="fa fa-instagram"
+                        aria-hidden="true"></i></a>
+
+            </div>
+        </div>
+
+        <div class="card" style="width: 25rem;margin: 10px;">
+            <img class="card-img-top" src="../static/images/team/shubham.JPG" alt="Shubham Kumar"
+                style="height: 60%;max-width: 25rem;">
+            <div class="card-body">
+                <h5 class="card-title">Shubham Kumar</h5>
+                <p class="card-text">Database Administration | Microsoft SQL Server</p>
+                <a href="https://www.linkedin.com/in/shubhamkumar02/" target="_blank"><i class="fa fa-linkedin icons"
+                        aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/ess_kay73/" target="_blank"><i class="fa fa-instagram"
+                        aria-hidden="true"></i></a>
+
+            </div>
+        </div>
+
+        <div class="card" style="width: 25rem;margin: 10px;">
+            <img class="card-img-top" src="../static/images/team/him.jpeg" alt="Himanshu Ranjan"
+                style="height: 60%;max-width: 25rem;">
+            <div class="card-body">
+                <h5 class="card-title">Himanshu Ranjan</h5>
+                <p class="card-text">Devops | Linux Distribution </p>
+                <a href="https://www.linkedin.com/in/himanshuranjan95" target="_blank"><i class="fa fa-linkedin icons"
+                        aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/hemanranjan/" target="_blank"><i class="fa fa-instagram"
+                        aria-hidden="true"></i></a>
+
+            </div>
+        </div>
+    </div>
+    
+    <h1 id="get-involved">Get involved</h1>
+
+    <p>Get involved with <b style="color: blue;">CodingForYouu</b> development by contacting us using the <a
+            href="{{url_for('contact')}}" target=" ">Contact</a> tab and we will reach back to you.</p>
+
+</div>
+{% endblock %}

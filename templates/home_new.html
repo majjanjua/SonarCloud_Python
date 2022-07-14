@@ -1,0 +1,78 @@
+{% extends "template.html" %}
+
+{% block body %}
+{% if popup %}
+<script>
+    $(document).ready(function(){
+        $("#myModal").modal('show');
+    });
+</script>
+<!--For the popup of the Are you stuck-->
+<div id="myModal" class="modal fade" >
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color:#2c292f;color: white;">
+             <div class="modal-header">
+                <img src="../static/images/slideshow/thinking1.jpg" class="card-img-top" alt="...">                
+            </div>
+            <div class="modal-body">
+                <h5 class="modal-title" style="color: red;">Are you Stuck ?</h5>
+                <form action="{{ url_for('register')}}">
+                    <p>Are you a college student and having trouble with your coding assignments?</p>
+                    <p>Are you a fresher in your company, and having troubles implementing logic, in your favourite coding language?</p>
+                    <p>Dont worry buddy, <a href="{{ url_for('homepage')}}">CodeForYouu</a> has got your back...Checkout the languages you can learn, along with constant guidance from the experts in our Team.</p>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+<div class="card text-white mb-3" style="text-align: center;background-color: #111E6C;">
+    <div class="card-body">
+      <h5 class="card-title">Quote of the Day:</h5>
+      <p class="card-text">{{ today_quote["q"] }}</p>
+      <p class="card-text"><cite title="Source Title">{{today_quote["a"]}}</cite></p>
+    </div>
+</div>
+<!-- <div>
+    <form action="{{ url_for('pagination')}}" method="GET">
+        <button>Click for pagination</button>
+    </form>
+</div> -->
+{% if queryPresent %}
+    <!-- This if for fetching and displaying all the problem statements updated by the users. -->
+    <div>
+        <p style="font-size: xx-large;overflow-wrap: anywhere;max-width: 50%;"> Updated Queries : </p>
+        {% for i in problemQuestions.items %}
+            <form action="{{ url_for('problemquery', id=i['id'])}}" method="POST">
+                <a href="{{ url_for('problemquery', id=i['id'])}}" style="color: black;" target="#">
+                    <div style="font-size: medium;overflow-wrap: anywhere;" class="text-truncate" title="{{i['problem']}}">
+                        {{i['problem']}}
+                    </div>
+                </a>
+                
+                <div>
+                    Updated by: {{ i['name'].upper() }}
+                </div>
+
+            </form>
+            <hr>
+        {% endfor  %}
+    </div>
+    {% for page_num in problemQuestions.iter_pages() %}
+        {% if page_num %}
+            {% if problemQuestions.page == page_num %}
+                <a class="btn btn-info lg-4" href="{{ url_for('homepage', page=page_num)}}"> {{ page_num }}</a>
+            {% else %}
+                <a class="btn btn-outline-info lg-4" href="{{ url_for('homepage', page=page_num)}}"> {{ page_num }}</a>
+            {% endif %}
+        {% else %}
+            ...
+        {% endif %}
+    {% endfor %}
+{% else %}
+    <div style="justify-content: center;font-size: x-large;background-color: #111E6C;color: white;">
+        <marquee>No query present.</marquee>
+    </div>
+{% endif %}
+{% endblock %}

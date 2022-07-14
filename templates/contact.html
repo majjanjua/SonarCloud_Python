@@ -1,0 +1,63 @@
+{% extends "template.html" %}
+
+{% block body %}
+<div style="display: flex;flex-direction: column;flex-wrap: wrap;">
+    <br>
+    {% if not message_written %}
+    <div style="flex:10%;margin-right: 10px;">
+        <div class="card mb-3">
+            <img src="../static/images/backgroundImage/contact3.jpg" alt="CodeForYouu" width="100%" height="500">
+            <div class="card-body">
+                <h5 class="card-title">Quote</h5>
+                <p class="card-text"><b>Skill is fine, Genius is splendid, But the right contacts are more valuable than
+                        either.</b></p>
+                <p class="card-text"><cite title="Source Title">Sir ArchiBald Mclndoe.</cite></p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <p><cite>We at CodeHelpers love hearing from our customer's. Please feel free to put in a comment, a suggestion
+                or a simple thank you for all that we have served or will serve you.</cite></p>
+    </div>
+
+    <div style="flex: 50%;">
+        <form action="{{url_for('contact')}}" method="POST">
+
+            <div class="form-group row">
+                <div class="col-sm-12 ">
+                    <input type="name" class="form-control" name="name" required placeholder="Name">
+                </div>
+            </div>
+            <div class="form-group row ">
+                <div class="col-sm-12 ">
+                    <input type="email" class="form-control" name="email" required placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group row ">
+                <div class="col-sm-12 ">
+                    <textarea type="text" class="form-control" maxlength="300" name="message" required
+                        placeholder="Message" style="height: 300px;"></textarea>
+                </div>
+            </div>
+            <div class="form-group row ">
+                <div class="col-sm-12">
+                    <button class="btn-md btn-primary form-control" type="submit">Submit form</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% else %}
+
+    <div style="background-image: url('../static/images/backgroundImage/hills.jpg');background-size: cover;">
+        <div style="padding:10px;align-items: center;text-align: center;">
+            <p><cite>We at CodeHelpers are really thankful to you for taking time out of your busy schedule.</cite></p>
+            <strong>Thanks for your submission. We will contact you shortly. Until then Stay Home, stay Safe #COVID19</strong>
+        </div>
+
+    </div>
+
+{% endif %}
+
+{% endblock %}

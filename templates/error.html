@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
+    <title>Error...!!!!!</title>
+</head>
+<body style="background-color: black;">
+    <div style="width: 100%;height: 100%;margin-top: 5%;">
+        <img style="width: 100%;background-size: cover;" src="../static/images/error.png">
+    </div>
+    <div class="error">
+        <div style="color:aliceblue">
+            ERROR:
+        </div>
+        <div style="color:aliceblue">
+            Please read the following message:
+            <p> ERROR:  {{ error_message }} </p>
+        </div>
+        <div class="error_btn"> 
+            <button class="btn-md btn-primary" style="text-align: center;">
+                <a href="{{ url_for('login')}}" style="color: white;"> Move to Login Page </a>
+            </button>
+        </div>
+    </div>
+    
+    <!--This is for the footer-->
+    
+
+</body>
+<footer class="footer" style="text-align: center;color: white;">
+    Copyright@2020: CodingForYouu
+</footer>
+</html>

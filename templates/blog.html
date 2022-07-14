@@ -1,0 +1,62 @@
+{% extends 'template.html' %}
+
+{% block body %}
+<!--For the slideshow-->
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+        <li data-target="#demo" data-slide-to="3"></li>
+    </ul>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../static/images/slideshow/python_learning.png" alt="Los Angeles" width="100%" height="500">
+        </div>
+        <div class="carousel-item">
+            <img src="../static/images/slideshow/easiest-programming-languages-to-learn-1.jpg" alt="Chicago"
+                width="100%" height="500">
+        </div>
+        <div class="carousel-item">
+            <img src="../static/images/slideshow/7-Most-In-Demand-Programming-Languages-To-Learn-In-2020.jpg"
+                alt="New York" width="100%" height="500">
+        </div>
+        <div class="carousel-item">
+            <img src="../static/images/slideshow/Salaries.png"
+                alt="New York" width="100%" height="500">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon" style="background-color: black;"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon" style="background-color: black;"></span>
+    </a>
+</div>
+<br>
+<!-- <div style="display: flex;flex-direction: row;flex-wrap: wrap;">
+    <div style="flex: 70%;">
+        Blog Content
+    </div> 
+    <div> -->
+        <h1>Learning Section:</h1>
+        <div style="display: flex;flex-direction: row;flex-wrap: wrap;margin: 10px;">
+            {% for i in images %}
+                <div class="card" style="width: 15rem;text-align: center;">
+                    <img src="../static/images/languages/{{ i }}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                        <h5 class="card-title">{{ i.split('.')[0].capitalize()}}</h5>
+                        <a href="{{ url_for('lang', lang=i.split('.')[0]) }}" class="btn btn-info" target=" ">Learn {{ i.split('.')[0].capitalize()}} </a>
+                </div>            
+            {% endfor %}
+        </div>
+            
+    <!-- </div>
+</div> -->
+
+<div>
+
+    
+</div>
+{% endblock %}

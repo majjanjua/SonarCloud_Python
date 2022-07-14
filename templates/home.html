@@ -1,0 +1,46 @@
+{% extends "template.html" %}
+
+{% block body %}
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+    <h1 class="bd-title">CodingForYouu</h1>
+    <p class="bd-lead">We are here to help you with your coding question, doubts and a lot of other helpful stuffs.</p>
+    <p class="bd-lead">Its very easy, All you need to do is move to <a href="{{url_for('addrequest')}}" style="color: red;"> Add a Query</a> page, Fill in the details and Voilaaa....You are done.</p>
+    <p> We will contact you , with a proposed solution to your submitted query, and help you solve your issue. Its that simple.....So..Lets Start Mate..!! </p>
+    </main>
+    <hr>
+    {% for req in request %}
+        <div style="font-size:15px;margin-bottom: 10px;">
+            <div style="display: flex;flex-direction: column;margin: 5px;color: black;background-color: white;border-radius: 10px;">
+                <div style="margin: 10px;width: auto;height: auto;">
+                    <strong>Name:</strong> {{ req["name"] }}
+                </div>
+                <div style="margin: 10px;width: auto;height: auto;">
+                    <strong>Email:</strong> {{ req["email"] }}
+                </div>
+                <div style="margin: 10px;width: auto;height: auto;overflow-wrap: anywhere;">
+                    <strong>Query:</strong> {{ req["problem"] }}
+                </div>
+                <div style="margin: 10px;width: auto;height: auto;overflow-wrap: anywhere;">
+                    <strong>Preferred Language:</strong> {{ req["language"] }}
+                </div>
+                <div style="margin: 10px;width: auto;height: auto;overflow-wrap: anywhere;">
+                    <strong>Updated Date:</strong> {{ req["updatedate"] }}
+                </div>
+                <div style="margin: 10px;width: auto;height: auto;overflow-wrap: anywhere;">
+                    <strong>Deadline :</strong> {{ req["deadline"] }}
+                </div>
+                <form action="{{ url_for('modify', id=req['id']) }}">
+                    <div class="form-group row " >
+                        <div class="col-sm-12">
+                            <button style="margin: 10px;width: auto;height: auto;overflow-wrap: anywhere;" class="btn-md btn-primary form-control col-sm-6" type="submit">Modify</button>
+                        </div>
+                    </div>
+                </form>                
+            </div>
+            
+            <hr>
+        </div>
+        
+    {% endfor %}
+
+{% endblock %}

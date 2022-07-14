@@ -1,0 +1,67 @@
+{% extends "template.html" %}
+
+{% block body %}
+
+    <!-- This part will be executed if it is a NEW ENTRY. -->
+    <form action="{{ url_for('addrequest')}}" method="POST">
+        <!-- FOR NAME -->
+        <div class="form-group">
+          <label for="addrequest" style="margin: 5px;"><strong>Name</strong></label>
+          <input style="margin: 5px;" required type="text" class="form-control" name="name" placeholder="Jane">
+        </div>
+        <!-- FOR EMAIL -->
+        <div class="form-group">
+          <label style="margin: 5px;" for="addrequest"><strong>Email address</strong></label>
+          <input style="margin: 5px;" required type="email" class="form-control" name="email" placeholder="name@example.com">
+        </div>
+        <!-- FOR PROBLEM STATEMENT -->
+        <div class="form-group row ">
+            <div class="col-sm-12 ">
+                <label style="margin: 5px;" for="addrequest"><strong>Problem Statement</strong></label>
+                <textarea  type="text" class="form-control" maxlength="500" name="problem" required
+                    placeholder="Problem Statement" style="height: 300px;"></textarea>
+            </div>
+        </div>
+        <!-- FOR DEADLINE DATE. -->        
+        <div class="form-group">
+          <label for="datepicker" style="margin: 5px;" ><strong>Deadline</strong></label>
+          <div class="form-group-prepend">
+            <span class="input-group-text fa fa-calendar" id=""></span>
+          </div>            
+            <!-- <input style="margin: 5px;" required type="text" class="form-control" name="deadline" placeholder="Date Month Year"> -->
+            <!-- <div class="col-md-4 col-sm-4 col-xs-12"> -->
+            <input type="text" name='deadline' class="form-control" id="datepicker" required placeholder="MM/DD/YYYY" >
+        </div>    
+
+        <!-- FOR LANGUAGE CHOICE -->
+        <div class="form-group">
+          <label style="margin: 5px;" for="addrequest"><strong>Language Choice</strong><h6 style="color: red;">In case of Others, please specify the language in the Problem Statement Text Box.</h6></label>
+          <select style="margin: 5px;" required class="form-control" name="language">
+            {% for lang in laguages_list %}
+            <option>{{ lang }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <!-- FOR DEADLINE DATE. -->
+        <div class="form-group">
+          <label style="margin: 5px;" for="addrequest"><strong>Secret Key</strong> <h6 style="color: red;">Please remember this. You will need it if you want to update you query later.</h6></label>
+          <input style="margin: 5px;" type="text" class="form-control" name="secretkey" placeholder="To uniquely identify yourself.">
+          {% if secreyKeystatus %}
+            <p style="color: darkred;"><b>The secret key exists. Please input some other secret key.</b></p>
+          {% endif%}
+      </div>
+        <div class="form-group row" style="padding-bottom: 5vh;">
+            <div class="col-sm-12">
+                <button style="margin: 5px;" class="btn-md btn-info form-control" name='buttonrequest' value="submit" type="submit">Submit form</button>
+            </div>
+        </div>
+      </form>
+<script>
+  $(document).ready(function() {
+  $("#datepicker").datepicker();
+  $('.fa-calendar').click(function() {
+      $("#datepicker").focus();
+  });
+  });
+</script>
+{% endblock %}

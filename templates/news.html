@@ -1,0 +1,53 @@
+{% extends 'template.html' %}
+
+{% block body %}
+<style>
+   .hovering{
+       opacity:1.0
+   }
+   .hovering:hover{
+        opacity: 0.6;
+   }
+</style>
+
+<div>
+    <h2>News and Information:</h2>
+    <div>
+        <form class="my-2 my-sm-0" action="{{ url_for('getnews')}}" method="POST">
+            <input class="form-control" type="search" required placeholder="Search for any technology terms" name="key" aria-label="Search">
+        </form>
+    </div>
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    {% if keyword_search_status %}
+    <div>
+        <strong>Search Results for : {{ key }}</strong>
+    </div>
+    {% endif %}
+    <div style="display: flex;flex-direction: row;flex-wrap: wrap;">      
+    {% for i in news["articles"] %}
+        
+            <div class="card hovering" style="width: 25rem;margin: 20px;">
+                <img src="{{i['urlToImage']}}" class="card-img-top" alt="CodeForYouu" style="max-width: 25rem;height: 177px;width: auto;" title="{{ i['title'] }}"> 
+                <div class="card-body">
+                    <h5 class="card-title text-truncate" style="max-width: 1000px;">{{ i['title' ]}}</h5>
+                    <p class="card-text"></p>
+                    <a href="{{i['url']}}" target="_blank" class="btn btn-info">Read more</a>
+                </div>
+            </div>
+        
+    {% endfor %}
+        
+            
+        
+    </div>
+</div>
+
+
+{% endblock %}

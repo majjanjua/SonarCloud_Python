@@ -1,0 +1,37 @@
+{% extends 'template.html' %}
+
+{% block body %}
+{% for query in queries.items %}
+<div class="card">
+    <div class="card-header">
+        <div class="text-truncate" style="max-width: 50%;">Query Details: </div>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        Problem Statement: 
+        <p>{{query['problem']}}</p>
+        <br>
+        Solution: 
+        Yet to be updated.
+        <footer class="blockquote-footer">{{query['name'].upper()}}, <cite title="Source Title"> Updated on : {{query['updatedate']}}</cite></footer>
+        <footer class="blockquote-footer">Chosen Language : {{query['language']}} </footer>
+      </blockquote>
+    </div>
+  </div>
+  <br>
+{% endfor %}
+{% for page_num in queries.iter_pages() %}
+    {% if page_num %}
+        {% if queries.page == page_num %}
+             <a class="btn btn-info mb-4" href="{{ url_for('pagination', page=page_num)}}"> {{ page_num }}</a>
+        {% else %}
+            <a class="btn btn-outline-info mb-4" href="{{ url_for('pagination', page=page_num)}}"> {{ page_num }}</a>
+        {% endif %}
+{% else %}
+    ...
+{% endif %}
+{% endfor %}
+  <br>
+
+  
+{% endblock %}

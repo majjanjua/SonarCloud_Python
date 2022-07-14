@@ -1,0 +1,43 @@
+{% extends 'template.html' %}
+
+{% block body %}
+
+    <div class="card">
+        <div class="card-header">
+            <div class="text-truncate" style="max-width: 50%;">Query Details: </div>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            Problem Statement: 
+            <p>{{query['problem']}}</p>
+            <br>
+            Solution: <br>
+            <textarea rows="10" cols="100" style="width: 100%;height: auto;text-align:center;padding-top:10px;background-color: lightgrey;font-family: 'Courier New', Courier, monospace;" readonly>{{query['solution']}}</textarea>
+            
+            <footer class="blockquote-footer">{{query['name'].upper()}}, <cite title="Source Title"> Updated on : {{query['updatedate']}}</cite></footer>
+            <footer class="blockquote-footer">Chosen Language : {{query['language']}} </footer>
+          </blockquote>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 1%">
+        <div class="card-header">
+          <div class="text-truncate" style="max-width: 50%;margin-bottom: 10px;">Comments: </div>
+          {% for comment in query["comments"] %}
+          <div class="form-group row">
+            <img src="../static/images/profile-pictures/avatar2.png" alt="Avatar" style=" vertical-align: middle;width:35px; height: 35px;border-radius: 50%;">{{comment}}
+          </div>
+          {% endfor %}
+
+          <form action="{{ url_for('problemquery',id=query['id'])}}" method="POST">
+            <textarea rows="3" cols="100" style="width: 100%;height: auto;padding-top:10px;background-color: lightgrey;font-family: 'Courier New', Courier, monospace;" name="newComment" ></textarea>
+            <div class="form-group row">
+              
+              <div class="col-sm-12">
+                  <button style="margin: 5px;background-color: #111E6C;" class="btn-md btn-info form-control" name='buttonrequest' value="submit" type="submit">Add Comment.</button>
+              </div>
+          </div>
+          </form>
+        </div>
+
+      </div>
+{% endblock %}
