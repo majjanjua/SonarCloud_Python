@@ -6,7 +6,7 @@ import os , requests, random, json ,io , sys
 import urllib.request
 import urllib.parse
 from flask_paginate import Pagination, get_page_parameter
-from models import *
+from models import requestdetails, message, images
 from models import users
 import PIL.Image as Image
 
