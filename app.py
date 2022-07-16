@@ -176,7 +176,6 @@ def homepage():
 		session['login_status'] = False	
 
 		
-	#quotes = requests.get('https://zenquotes.io/api/random').json()
 	#today_quote= random.choice(quotes)
 	today_quote = { "q" : "Jarvis, sometimes you got to run, before you can walk","a":"Robert Downey Jr."}
 	#problemQuestions = db.execute("SELECT * FROM requestdetails")
