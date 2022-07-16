@@ -79,7 +79,6 @@ def delete_session():
 	print(session)
 
 def get_message_count():
-	#messages_length=db.execute("SELECT * FROM message").fetchall()
 	messages_length = message.query.all()
 	# db.commit()
 	return messages_length
